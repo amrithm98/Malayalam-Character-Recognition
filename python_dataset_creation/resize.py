@@ -10,6 +10,7 @@ def process(filename, key,folderName):
     dim = (100, int(image.shape[0] *r))
 
     imageresized = cv2.resize(image,(32,32),dim,interpolation = cv2.INTER_AREA)
+    imageresized = cv2.cvtColor(imageresized,cv2.COLOR_BGR2GRAY)
     path='/home/amrith/Machine-Learning/MalayalamOCR/datasetCreation/'+folderName	
     cv2.imwrite(os.path.join(path,'{}_imageresized_{}.jpg'.format(folderName,key)) ,imageresized)
     print 'imageresized_{}.jpg'.format(key)

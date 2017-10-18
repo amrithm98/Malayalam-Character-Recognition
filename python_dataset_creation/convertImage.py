@@ -16,6 +16,6 @@ for i in dir_names:
 	#b=i.encode('utf-8').decode('utf-8')
 	actual_list+=[b]
 for folder in dir_names:
-	os.mkdir(folder)
+	#os.mkdir('/home/amrith/Machine-Learning/MalayalamOCR/datasetCreation/'+folder)
 	for (i,image_file) in enumerate(glob.iglob('/home/amrith/Machine-Learning/MalayalamOCR/lekha-OCR-database/train_images/'+folder+'/*.png')):
 		process(image_file, i,folder)
