@@ -1,13 +1,62 @@
+from keras.layers.core import Flatten, Dense, Dropout
+from keras.layers.convolutional import Conv2D, MaxPooling2D, ZeroPadding2D
+from keras.optimizers import SGD
+from keras.layers.normalization import BatchNormalization
+from keras import backend as K
 from keras.models import Sequential
 import matplotlib.pyplot as plt
 from keras.models import load_model
 import numpy as np
 import sys
 import cv2
+import h5py 
 
-n_classes =  133
+n_classes = 133
 n_rows = 32
 n_cols = 32
+batch_size = 256
+epochs = 20
+learning_rate = 0.001
+decay = 1e-6
+momentum = .9
+
+def create_model():
+    # conv-conv-pool ==> conv-conv-pool ==> dense ==>dense
+    print('Building Model..')
+    model = Sequential()
+    
+    model.add(Conv2D(32,(3,3),input_shape=(n_rows,n_cols,1),activation='relu'))
+    model.add(ZeroPadding2D((1,1)))
+    BatchNormalization(axis=1)
+    model.add(Conv2D(64,(3,3),activation='relu'))
+    BatchNormalization(axis=1)
+    model.add(MaxPooling2D((2,2),strides=(2,2)))
+    model.add(ZeroPadding2D((1,1)))
+    
+    model.add(Conv2D(64,(3,3),activation='relu'))
+    model.add(ZeroPadding2D((1,1)))
+    BatchNormalization(axis=1)
+    model.add(Conv2D(64,(3,3),activation='relu')) 
+    BatchNormalization(axis=1)
+
+    model.add(MaxPooling2D((2,2),strides=(2,2)))
+    
+    model.add(Flatten())
+    
+    model.add(Dense(2018, activation='relu'))
+    model.add(Dropout(0.5))
+    
+    model.add(Dense(512, activation='relu'))
+    model.add(Dropout(0.5))
+    
+    model.add(Dense(n_classes, activation='softmax'))
+    
+    sgd = SGD(lr = learning_rate, decay = decay, momentum = momentum,nesterov=True)
+    model.compile(optimizer = sgd, loss='categorical_crossentropy',metrics=['accuracy'])
+    
+    print('Model Generated')
+    
+    return model
 
 def getClassLabel():
     classLabels = np.array(["'", "'2", '(', ')', '+', '-', '0', '1', '2', '3', '4', '5', '6',
@@ -90,8 +139,8 @@ def preprocessImage(image):
 
 
 def recognitionEngine():
-
-    model = load_model("/home/amrith/Machine-Learning/MalayalamOCR/Project-Notebooks/Successful-Models/train2_97.h5")
+    model = create_model()
+    model.load_weights("/home/amrith/Machine-Learning/MalayalamOCR/Project-Notebooks/Successful-Models/train3_BN_96.h5")
     image = str(sys.argv[1])
     image_file = cv2.imread(image,0)
     image_file = preprocessImage(image_file)
