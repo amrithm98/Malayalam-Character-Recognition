@@ -1,0 +1,260 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Example: Project Report
+%
+% Source: http://www.howtotex.com
+%
+% Feel free to distribute this example, but please keep the referral
+% to howtotex.com
+% Date: March 2011
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX:
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook is a great place to start:
+% http://en.wikibooks.org/wiki/LaTeX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Edit the title below to update the display in My Documents
+%\title{Project Report}
+%
+%%% Preamble
+\documentclass[paper=a4, fontsize=11pt]{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage{fourier}
+
+\usepackage[english]{babel}															
+% English language/hyphenation
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage[pdftex]{graphicx}
+\usepackage{url}
+\usepackage{pgfgantt}
+
+
+%%% Custom sectioning
+\usepackage{sectsty}
+\allsectionsfont{\centering \normalfont\scshape}
+
+
+%%% Custom headers/footers (fancyhdr package)
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhead{}											% No page header
+\fancyfoot[L]{}											% Empty
+\fancyfoot[C]{}											% Empty
+\fancyfoot[R]{\thepage}									% Pagenumbering
+\renewcommand{\headrulewidth}{0pt}			% Remove header underlines
+\renewcommand{\footrulewidth}{0pt}				% Remove footer underlines
+\setlength{\headheight}{13.6pt}
+\definecolor{barblue}{RGB}{153,204,254}
+\definecolor{groupblue}{RGB}{51,102,254}
+\definecolor{linkred}{RGB}{165,0,33}
+\renewcommand\sfdefault{phv}
+\renewcommand\mddefault{mc}
+\renewcommand\bfdefault{bc}
+\setganttlinklabel{s-s}{START-TO-START}
+\setganttlinklabel{f-s}{FINISH-TO-START}
+\setganttlinklabel{f-f}{FINISH-TO-FINISH}
+\sffamily
+
+%%% Equation and float numbering
+\numberwithin{equation}{section}		% Equationnumbering: section.eq#
+\numberwithin{figure}{section}			% Figurenumbering: section.fig#
+\numberwithin{table}{section}				% Tablenumbering: section.tab#
+
+
+%%% Maketitle metadata
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} 	% Horizontal rule
+
+\title{
+		%\vspace{-1in}
+		\usefont{OT1}{bch}{b}{n}
+		\normalfont \normalsize \textsc{Department of Computer Science} \\ [25pt]
+		\horrule{0.5pt} \\[0.4cm]
+		\huge LIPI - Malayalam OCR System \\
+		\horrule{2pt} \\[0.5cm]
+}
+\author{
+		\normalfont 								\normalsize
+        Aarya R Shankar\\[-3pt]		\normalsize
+        Amrith M\\[-3pt]		\normalsize
+        Anand R\\[-3pt]		\normalsize
+        \newline
+        Sarathchandran S\\[-3pt]		\normalsize
+%         \today
+}
+\date{}
+
+
+%%% Begin document
+\begin{document}
+\maketitle
+\section{Scope}
+To develop a high quality OCR of Malayalam language using deep learning and computer vision within 3 months, after preparing the dataset from 
+3+ scanned copies of malayalam literature.
+% \subsection{Heading on level 2 (subsection)}
+% Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+
+% Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec 
+quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+
+% \subsubsection{Heading on level 3 (subsubsection)}
+% Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, 
+venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean 
+vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
+
+% \paragraph{Heading on level 4 (paragraph)}
+% Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et 
+magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat 
+massa quis enim.
+
+
+\section{ Technical Feasibility of Project}
+Our project is completely based on open source libraries and softwares. Hence the only potential problems that may arise during the 
+implementation of our project will be during the collection of data set and training our algorithm using collected data.
+
+% \subsection{Example for list (3*itemize)}
+% \begin{itemize}
+% 	\item First item in a list
+% 		\begin{itemize}
+% 		\item First item in a list
+% 			\begin{itemize}
+% 			\item First item in a list
+% 			\item Second item in a list
+% 			\end{itemize}
+% 		\item Second item in a list
+% 		\end{itemize}
+% 	\item Second item in a list
+% \end{itemize}
+
+% \subsection{Example for list (enumerate)}
+% \begin{enumerate}
+% 	\item First item in a list
+% 	\item Second item in a list
+% 	\item Third item in a list
+% \end{enumerate}
+\section{Project Benefits}
+Our projects has various benefits. Some of them are noted below:
+\begin{enumerate}
+	\item Our Kerala Government has enlisted Malayalam as the language of all official documents. Hence, a malayalam OCR is necessary for 
+digitalising them.
+	\item It can be used for other open source projects for organisation purposes in NGOs, etc
+	\item This project may be modified to read the malayalam scripts and process them using NLP (Natural Language Processing) and use a 
+text-to-speech software as an aid to blind people.
+\end{enumerate}
+
+
+\section{Timeline}
+\ganttset{calendar week text= \large {\startday/\startmonth}}
+
+% \begin{ganttchart}[
+%     hgrid,x unit=1.5mm,
+%     hgrid style/.style={draw=black!5, line width=.75pt},
+%     vgrid,
+%     time slot format=little-endian]{21-08-2017}{09-10-2017}
+% \gantttitlecalendar{ month=shortname,week=4} \\
+% \ganttgroup{Objective 1}{21-08-17}{04-09-17} \\
+% \ganttbar[progress=100, name=T1A]{Task A}{21-08-17}{28-08-17} \\
+% \ganttlinkedbar[progress=100]{Task B}{28-08-17}{04-09-2017} \\
+% \ganttgroup{Objective 2}{04-09-2017}{02-10-2017} \\
+% \ganttbar[progress=100, name=T2A]{Task A}{04-09-2017}{18-09-2017} \\
+% \ganttlinkedbar[progress=100]{Task B}{18-09-2017}{02-10-2017} \\
+% \ganttgroup{Objective 3}{02-10-2017}{09-10-2017} \\
+%   \ganttbar[progress=100]{Task A}{02-10-2017}{09-10-2017}
+% \end{ganttchart}
+\begin{ganttchart}[
+    canvas/.append style={fill=none, draw=black!5, line width=.75pt},
+    hgrid style/.style={draw=black!5, line width=.75pt},
+    vgrid={*1{draw=black!5, line width=.75pt}},
+    today=1,
+    today rule/.style={
+      draw=black!64,
+      dash pattern=on 3.5pt off 4.5pt,
+      line width=1.5pt
+    },
+    today label font=\small\bfseries,
+    title/.style={draw=none, fill=none},
+    title label font=\bfseries\footnotesize,
+    title label node/.append style={below=7pt},
+    include title in canvas=false,
+    bar label font=\mdseries\small\color{black!70},
+    bar label node/.append style={left=2cm},
+    bar/.append style={draw=none, fill=black!63},
+    bar incomplete/.append style={fill=barblue},
+    bar progress label font=\mdseries\footnotesize\color{black!70},
+    group incomplete/.append style={fill=groupblue},
+    group left shift=0,
+    group right shift=0,
+    group height=.5,
+    group peaks tip position=0,
+    group label node/.append style={left=.6cm},
+    group progress label font=\bfseries\small,
+    link/.style={-latex, line width=1.5pt, linkred},
+    link label font=\scriptsize\bfseries,
+    link label node/.append style={below left=-2pt and 0pt}
+  ]{1}{13}
+  \gantttitle[
+    title label node/.append style={below left=7pt and -3pt}
+  ]{WEEKS:\quad1}{1}
+  \gantttitlelist{2,...,12}{1} \\
+  \ganttgroup[progress=0]{LIPI - Malayalam OCR}{1}{12} \\
+  \ganttbar[
+    progress=0,
+    name=WBS1A
+  ]{\textbf{} Data collection}{1}{2} \\
+  \ganttbar[
+    progress=0,
+    name=WBS1B
+  ]{\textbf{} Data preprocessing}{3}{4} \\
+  \ganttbar[
+    progress=0,
+    name=WBS1C
+  ]{\textbf{} Character classification}{5}{8} \\
+  \ganttbar[
+    progress=0,
+    name=WBS1D
+  ]{\textbf{} Text extraction from image}{9}{10} \\
+  \ganttbar[
+    progress=0,
+    name=WBS1E
+  ]{\textbf{} Setting up the OCR}{11}{12} \\[grid]
+%   \ganttlink[link type=s-s]{WBS1A}{WBS1B}
+%   \ganttlink[link type=f-s]{WBS1B}{WBS1C}
+\end{ganttchart}
+
+
+\section{Resources}
+\begin{enumerate}
+	\item Nvidia GPU processor provided by Kerala Startup Mission
+	\item Keras - neural network library written in Python
+	\item numpy - Library for scientific computing with Python
+	\item matplotlib - excellent plotting and graphing libraries
+	\item tensorflow - Depplearning Library
+	\item tiano - Deeplearning Library
+	\item pandas - Python version of R dataframe
+	\item IPython - with the additional libraries required for the notebook interface.
+	\item openCV - Computer vision Library
+\end{enumerate}
+
+\section{Risks}
+\begin{enumerate}
+    \item Finding a large dataset to pretrain on
+    \item Difficult to debug in between models which is not working
+    \item Training a large set of dataset need a very efficient GPU
+    \item Updating the pretrained model when more data or better techniques becomes available
+
+\end{enumerate}
+
+
+
+%%% End document
+\end{document}

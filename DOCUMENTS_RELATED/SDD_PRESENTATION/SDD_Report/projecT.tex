@@ -1,0 +1,143 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usetheme{Szeged}
+\usecolortheme{beaver}
+\usepackage[english]{babel}
+\usepackage{ulem}
+\usepackage{xmpmulti}
+%Information to be included in the title page:
+\title{Malayalam Text Recognition System}
+\author{Aarya R. Shankar
+			\and Amrith M
+				 \and Anand R
+					\and Sarathchandran S}
+\institute{Department of Computer Science\and College of Engineering,Trivandrum}
+\date{2015-2019}
+ 
+\begin{document}
+
+\frame{\titlepage}
+
+
+\begin{frame}
+\frametitle{Table of Contents:-}
+\begin{itemize}
+\item Problem Definition \& Objectives
+\item Problem Domain \& Relevance
+\item Literature Review
+\item Design of the Project
+\item Dataset Updates
+\item Model Trials
+\item Further Updates
+\item Planning of Project
+\item Conclusion
+
+
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Problem Definition \& Objectives}
+    Problem
+    \begin{itemize}
+         \item
+         Character Recognition System for Malayalam doesn't exist. Hence digitizing official documents become difficult
+    \end{itemize}
+    Objectives
+    \begin{itemize}
+        \item To develop a character recognition system for Malayalam language with at least 90\% accuracy.
+        \item Deploy the project to a simple application for demonstration.
+        \item Completely open source the project (Existing ones aren't completely open source).
+    \end{itemize}
+     
+\end{frame}
+
+\begin{frame}{Problem Domain \& Relevance}
+    Problem Domain
+    \begin{itemize}
+         \item
+         Deep-Learning (with Convolutional Neural Networks) 
+    \end{itemize}
+    Relevance
+    \begin{itemize}
+        \item Can be used for developing an OCR, which is useful for Govt. purposes.
+    
+    \end{itemize}
+     
+\end{frame}
+
+\begin{frame}{Literature Review}
+    \textbf{Analyzed Papers}
+    \begin{itemize}
+         \item
+         Malayalam Character Recognition using Discrete
+Cosine Transform - Sasidas S R
+        \item Offline Malayalam Character Recognition using - CUSAT Team
+         \item Lekha OCR - SPACE Kerala
+    \end{itemize}
+    
+     
+\end{frame}
+
+\begin{frame}{Design of the Project: Dataset Updates}
+
+    \begin{columns}[c] % the "c" option specifies center vertical alignment
+    \column{\textwidth} % column designated by a command
+    \begin{itemize}
+        \item Received a non-uniformly distributed dataset from SPACE
+        \item Cleaned up the dataset.
+
+        \item Changed all images to 32X32 pixels
+
+        \item Converted all Images to Grayscale
+
+    \end{itemize}
+     
+    \end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Design of the Project: Model Trials}
+     \begin{itemize}
+        \item Created a Test Model with the following features: 
+        \item 2 Conv-Conv-Pool Layers (Intuition from VGG16)
+
+        \item 2 Fully Connected Layers
+
+        \item Output layer with Softmax Log Probabilities(133 Classes)
+        
+        \item Tested on a Sample dataset with 40\% accuracy (BAD)
+
+
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Design of the Project: Further Updates}
+     \begin{itemize}
+        \item Getting More Data 
+        
+        \item Use of augmentation and ensembles
+
+        \item Optimizing the model and hyperparameters
+
+
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Planning of the Project}
+\begin{itemize}
+    \item Oct 25 - Final Data Setup in standard MNIST format
+    \item Nov 10 - Optimizing the model (Layer,Parameters etc)
+    \item Nov 20 - Completing the OCR and using trained weights for prediction. Implementing this to a system. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conclusion}
+More than half of the works are done. Little tweak on the dataset and the model is left for the project to end.
+\end{frame}
+\end{document}
+
+
