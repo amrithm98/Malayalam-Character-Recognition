@@ -23,10 +23,17 @@ Trained the model using floydhub service
 <br>
 Results are below :
 <br>
-  ![Test Loss & Accuracy](https://github.com/amrithm98/Malayalam-Character-Recognition/blob/master/DOCUMENTS_RELATED/DDD/Related_TEX_AND_IMAGES/result.png?raw=true)
-  ![Sample Predictions](https://github.com/amrithm98/Malayalam-Character-Recognition/blob/master/DOCUMENTS_RELATED/DDD/Related_TEX_AND_IMAGES/samp1.png?raw=true)
-  ![Sample Predictions](https://github.com/amrithm98/Malayalam-Character-Recognition/blob/master/DOCUMENTS_RELATED/DDD/Related_TEX_AND_IMAGES/samp2.png?raw=true)
-
+<p align="center">
+  <img style="width:100%" src=https://github.com/amrithm98/Malayalam-Character-Recognition/blob/master/DOCUMENTS_RELATED/DDD/Related_TEX_AND_IMAGES/result.png?raw=true">
+</p>
+                                                                                                                             <br>                       
+<p align="center">
+  <img src="https://github.com/amrithm98/Malayalam-Character-Recognition/blob/master/DOCUMENTS_RELATED/DDD/Related_TEX_AND_IMAGES/samp1.png?raw=true">
+</p>
+                                                                                                                             <br>
+<p align="center">
+  <img src="https://github.com/amrithm98/Malayalam-Character-Recognition/blob/master/DOCUMENTS_RELATED/DDD/Related_TEX_AND_IMAGES/samp2.png?raw=true">
+</p>
 
 <br><br>
 <b>Model Used</b>
@@ -35,3 +42,19 @@ Results are below :
 <p align="center">
   <img src="https://github.com/amrithm98/Malayalam-Character-Recognition/blob/master/DOCUMENTS_RELATED/DDD/Related_TEX_AND_IMAGES/model.png?raw=true">
 </p>
+
+<br><br>
+<b>Deployment</b>
+<br>==========
+<br>
+<img src="https://github.com/amrithm98/Malayalam-Character-Recognition/blob/master/DOCUMENTS_RELATED/DDD/Related_TEX_AND_IMAGES/deployment.png?raw=true">
+</p>
+
+<br><br>
+<b>Coming Soon</b>
+<br>===========
+<br>
+<ol>
+  <li> Adding more data + augmentation</li>
+  <li> Deployment in a web-app</li>
+</ol>
